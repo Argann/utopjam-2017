@@ -14,7 +14,7 @@ public class Deplacement : MonoBehaviour {
     /// Vitesse de déplacement de l'entité.
     /// </summary>
     [SerializeField]
-    [Range(0,50f)]
+    [Range(0,5f)]
     private float speed;
 
     public float Speed {
