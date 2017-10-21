@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(ComportementEmploye))]
 public class DeplacementEmploye : Deplacement {
 
     /// <summary>
@@ -15,30 +16,16 @@ public class DeplacementEmploye : Deplacement {
         set { distanceMinimale = value; }
     }
 
-
-    /// <summary>
-    /// Vitesse de déplacement de l'employé pour aller travailler.
-    /// </summary>
-    [SerializeField]
-    [Range(0, 5f)]
-    private float vitesseTravail;
-
-    public float VitesseTravail {
-        get { return vitesseTravail; }
-        set { vitesseTravail = value; }
-    }
-
-
     /// <summary>
     /// Vitesse de déplacement de l'employé pour aller glander.
     /// </summary>
     [SerializeField]
     [Range(0, 5f)]
-    private float vitesseGlande;
+    private float vitesse;
 
-    public float VitesseGlande {
-        get { return vitesseGlande; }
-        set { vitesseGlande = value; }
+    public float Vitesse {
+        get { return vitesse; }
+        set { vitesse = value; }
     }
 
     /// <summary>
@@ -64,10 +51,15 @@ public class DeplacementEmploye : Deplacement {
                 // Si c'était le dernier, on stoppe l'employé.
                 if (chemin.Count == 0) {
                     Move(Vector2.zero, 0f);
+                    // Et on dis aussi qu'il commence à glander
+                    GetComponent<ComportementEmploye>().Etat = ComportementEmploye.EtatEmploye.Glande;
                 }
             } else {
                 // S'il n'est pas encore arrivé à destination, on l'envoi au point.
-                Move((destination.position - transform.position).normalized, vitesseTravail);
+                Move(
+                    (destination.position - transform.position).normalized,
+                    vitesse
+                    );
             }
         }
     }
