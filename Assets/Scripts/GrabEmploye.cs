@@ -9,23 +9,55 @@ public class GrabEmploye : MonoBehaviour {
 
     void Start() {
         tientEmploye = false;
+        estPresEmploye = null;
+        estPresPoste = null;
     }
 
-	void OnTriggerStay2D(Collider2D coll) {
-        if (coll.CompareTag("Employe") && Input.GetAxisRaw("Jump") > 0 && !tientEmploye) {
+    private GameObject estPresEmploye;
+
+    private GameObject estPresPoste;
+
+    void OnTriggerEnter2D(Collider2D coll) {
+        if (coll.CompareTag("Employe") && !tientEmploye) {
+            estPresEmploye = coll.gameObject;
+        }
+        if (coll.CompareTag("Poste")) {
+            estPresPoste = coll.gameObject;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D coll) {
+        if (coll.CompareTag("Employe") && !tientEmploye) {
+            estPresEmploye = null;
+        }
+        if (coll.CompareTag("Poste")) {
+            estPresPoste = null;
+        }
+    }
+
+    void Update() {
+        if (estPresEmploye && Input.GetAxisRaw("Jump") > 0 && !tientEmploye) {
             PrendEmploye();
         }
 
-        if (coll.CompareTag("Poste") && Input.GetAxisRaw("Jump") > 0 && tientEmploye) {
+        if (estPresPoste && Input.GetAxisRaw("Jump") > 0 && tientEmploye) {
             PoseEmploye();
         }
     }
 
     public void PrendEmploye() {
         tientEmploye = true;
+        estPresEmploye.transform.SetParent(this.transform);
+        estPresEmploye.SetActive(false);
+        
     }
 
     public void PoseEmploye() {
         tientEmploye = false;
+        estPresEmploye.SetActive(true);
+        estPresEmploye.GetComponent<ComportementEmploye>().VaTravailler();
+        estPresEmploye.transform.SetParent(null);
+        estPresEmploye.transform.position = new Vector2(estPresPoste.transform.position.x, estPresPoste.transform.position.y);
+        
     }
 }

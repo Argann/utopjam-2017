@@ -77,13 +77,20 @@ public class ComportementEmploye : MonoBehaviour {
 
 	}
 
+    /// <summary>
+    /// Fonction à appeler quand on veut que l'employe bosse.
+    /// </summary>
     public void VaTravailler() {
+        GetComponent<DeplacementEmploye>().Chemin = new List<Transform>();
         etat = EtatEmploye.Travaille;
         cooldown = Random.Range(tempsTravailMinimum, tempsTravailMaximum);
     }
 
+    /// <summary>
+    /// Fonction à appeler quand on veut que l'employé aille glander.
+    /// </summary>
     public void VaGlander() {
         etat = EtatEmploye.VaGlander;
-        GetComponent<DeplacementEmploye>().Chemin = chemins[Random.Range(0, chemins.Count)].points;
+        GetComponent<DeplacementEmploye>().Chemin = new List<Transform>(chemins[Random.Range(0, chemins.Count)].points);
     }
 }
