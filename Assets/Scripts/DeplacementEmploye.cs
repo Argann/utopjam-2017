@@ -56,6 +56,11 @@ public class DeplacementEmploye : Deplacement {
                 }
             } else {
                 // S'il n'est pas encore arrivé à destination, on l'envoi au point.
+                Vector3 persoPos = Camera.main.WorldToScreenPoint(transform.position);
+                Vector3 destPos = Camera.main.WorldToScreenPoint(destination.position);
+                Vector3 dir = destPos - persoPos;
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90));
+
                 Move(
                     (destination.position - transform.position).normalized,
                     vitesse

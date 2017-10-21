@@ -57,7 +57,7 @@ public class GrabEmploye : MonoBehaviour {
         estPresEmploye.SetActive(true);
         estPresEmploye.GetComponent<ComportementEmploye>().VaTravailler();
         estPresEmploye.transform.SetParent(null);
-        estPresEmploye.transform.position = new Vector2(estPresPoste.transform.position.x, estPresPoste.transform.position.y);
+        estPresEmploye.transform.position = estPresPoste.transform.position;
         
     }
 }
