@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a726986aaad6e46a5b19a9bdd2066f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceMinimale: 0.05
+  distanceMinimale: 0.5
   vitesse: 2
   chemin: []
 --- !u!114 &114961958557459914
