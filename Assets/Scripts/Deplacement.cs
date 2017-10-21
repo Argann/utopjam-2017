@@ -10,18 +10,6 @@ public class Deplacement : MonoBehaviour {
     /// </summary>
     private Rigidbody2D rb;
 
-    /// <summary>
-    /// Vitesse de déplacement de l'entité.
-    /// </summary>
-    [SerializeField]
-    [Range(0,5f)]
-    private float speed;
-
-    public float Speed {
-        get { return speed; }
-        set { speed = value; }
-    }
-
     // Appelé lors de l'apparition de l'objet attaché.
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -34,7 +22,7 @@ public class Deplacement : MonoBehaviour {
     /// <param name="direction">
     /// Vector2 représentant la direction vers laquelle l'objet doit se déplacer
     /// </param>
-    public void Move(Vector2 direction) {
+    public void Move(Vector2 direction, float speed) {
         rb.velocity = direction * speed;
     }
 
