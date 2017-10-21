@@ -8,6 +8,12 @@ public class DeplacementJoueur : Deplacement {
 
     private float vertical;
 
+    [SerializeField]
+    private Animator animHaut;
+
+    [SerializeField]
+    private Animator animBas;
+
     /// <summary>
     /// Vitesse de déplacement de l'entité.
     /// </summary>
@@ -30,6 +36,18 @@ public class DeplacementJoueur : Deplacement {
 
     // On applique le mouvement récupéré dans le Update
     void FixedUpdate() {
+
+        animHaut.SetBool("idle", !(horizontal > 0 || horizontal < 0 || vertical < 0 || vertical > 0));
+        animBas.SetBool("idle", !(horizontal > 0 || horizontal < 0 || vertical < 0 || vertical > 0));
+
+        Vector3 direction = new Vector2(horizontal, vertical);
+
+        Vector3 persoPos = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 destPos = Camera.main.WorldToScreenPoint(transform.position + direction);
+        Vector3 dir = destPos - persoPos;
+        animBas.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90));
+
+
         Move(new Vector2(horizontal, vertical), speed);
     }
 }
