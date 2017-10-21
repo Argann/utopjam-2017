@@ -16,7 +16,7 @@ public class Pdebut : MonoBehaviour {
 
     public void EnterJam()
     {
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene("game");
     }
 
     public void QuitJam()
