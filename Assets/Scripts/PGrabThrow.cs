@@ -15,6 +15,8 @@ public class PGrabThrow : MonoBehaviour {
     private float throwingPower;
     [SerializeField]
     private bool _isThrowing;
+    [SerializeField]
+    private Vector2 positionObjet= new Vector2();
 
     IEnumerator throwstop()
     {
@@ -27,7 +29,7 @@ public class PGrabThrow : MonoBehaviour {
     // Use this for initialization
     void Start()
         {
-            
+            PlayerMain.transform.localPosition = positionObjet;
         }
 
         // Update is called once per frame
