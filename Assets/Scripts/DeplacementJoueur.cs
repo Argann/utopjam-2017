@@ -32,5 +32,4 @@ public class DeplacementJoueur : Deplacement {
     void FixedUpdate() {
         Move(new Vector2(horizontal, vertical), speed);
     }
-
 }

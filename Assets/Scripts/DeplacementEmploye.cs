@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class DeplacementEmploye : Deplacement {
 
-    enum EtatEmploye {
-        Travaille,
-        VaGlander,
-        Glande,
-        VaTravailler
+    /// <summary>
+    /// Représente la distance minimale où on considère que l'employé à bien atteint le point.
+    /// </summary>
+    [SerializeField]
+    private float distanceMinimale;
+
+    public float DistanceMinimale {
+        get { return distanceMinimale; }
+        set { distanceMinimale = value; }
     }
+
 
     /// <summary>
     /// Vitesse de déplacement de l'employé pour aller travailler.
@@ -23,6 +28,7 @@ public class DeplacementEmploye : Deplacement {
         set { vitesseTravail = value; }
     }
 
+
     /// <summary>
     /// Vitesse de déplacement de l'employé pour aller glander.
     /// </summary>
@@ -35,6 +41,10 @@ public class DeplacementEmploye : Deplacement {
         set { vitesseGlande = value; }
     }
 
+    /// <summary>
+    /// Chemin que l'employé doit effectuer
+    /// </summary>
+    [SerializeField]
     private List<Transform> chemin;
 
     public List<Transform> Chemin {
@@ -42,31 +52,25 @@ public class DeplacementEmploye : Deplacement {
         set { chemin = value; }
     }
 
-    
-
-    void 
-
-
     void FixedUpdate() {
-
+        // Si il reste du chemin à parcourir.
         if(chemin.Count > 0) {
+            // On récupère le prochain point de destination.
             Transform destination = chemin[0];
-            if (transform.Equals(destination)) {
+            // Si l'employé est déjà arrivé sur le point...
+            if (Vector2.Distance(destination.position, transform.position) < distanceMinimale) {
+                // On enlève le point de la liste des points à atteindre.
                 chemin.Remove(destination);
+                // Si c'était le dernier, on stoppe l'employé.
+                if (chemin.Count == 0) {
+                    Move(Vector2.zero, 0f);
+                }
             } else {
-                Vector2 direction = new Vector2(
-                        Mathf.Abs(destination.position.x - transform.position.x) > 1 ? 1f : destination.position.x - transform.position.x,
-                        Mathf.Abs(destination.position.y - transform.position.y) > 1 ? 1f : destination.position.y - transform.position.y
-                    );
+                // S'il n'est pas encore arrivé à destination, on l'envoi au point.
+                Move((destination.position - transform.position).normalized, vitesseTravail);
             }
         }
-
     }
-
-
-
-
-
 }
 
 

@@ -25,7 +25,4 @@ public class Deplacement : MonoBehaviour {
     public void Move(Vector2 direction, float speed) {
         rb.velocity = direction * speed;
     }
-
-
-
 }
