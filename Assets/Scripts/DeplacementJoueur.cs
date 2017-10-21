@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DeplacementJoueur : Deplacement {
+
+    private float horizontal;
+
+    private float vertical;
 	
-	// Update est appelée à chaque frame
+	// Update est appelée à chaque frame.
+    // C'est mieux de récupérer les Input dans cette boucle, et de faire le mouvement
+    // dans le Fixed Update.
 	void Update () {
-        // Utilise le déplacement de la classe _Déplacement_...
-        Move(
-            // En récupérant un nouveau Vecteur2...
-            new Vector2(
-                // Contenant les axes de jeu (touches fléchées généralement)
-                Input.GetAxisRaw("Horizontal"), 
-                Input.GetAxisRaw("Vertical")
-                )
-            );
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
 	}
+
+    // On applique le mouvement récupéré dans le Update
+    void FixedUpdate() {
+        Move(new Vector2(horizontal, vertical));
+    }
 
 }
