@@ -562,9 +562,9 @@ MonoBehaviour:
   TITRE: {fileID: 1193272962}
   FIN: {fileID: 221277899}
   Jeufini: 0
-  heure: 35
-  minute: 52
-  stade: 2
+  heureRestantes: 0
+  minuteRestantes: 0
+  stadeJeu: 0
 --- !u!1 &1193272960
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,11 +626,11 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 8
     m_MaxSize: 80
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: GROS TITRE
 --- !u!222 &1193272963

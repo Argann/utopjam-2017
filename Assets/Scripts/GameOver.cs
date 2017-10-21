@@ -12,11 +12,11 @@ public class GameOver : MonoBehaviour {
     [SerializeField]
     private bool Jeufini;
     [SerializeField]
-    private int heure;
+    private int heureConsomme;
     [SerializeField]
-    private int minute;
+    private int minuteConsomme;
     [SerializeField]
-    private int stade;
+    private int stadeJeu;
 
     private string[] Titre = new string[]
     {
@@ -38,20 +38,24 @@ public class GameOver : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		if (Jeufini)
+        heureConsomme = PlayerPrefs.GetInt("heure");
+        minuteConsomme = PlayerPrefs.GetInt("minutes");
+        stadeJeu = PlayerPrefs.GetInt("stade");
+        Jeufini = (PlayerPrefs.GetInt("fin") != 0);
+        if (Jeufini)
         {
-            if (minute > 0)
-                heure--;
-            TITRE.text = Titre[0]+ "\n Tu as fait un jeu en " + (48 - heure) + " heures et " + (60 - minute) + " minutes";
-            if ((48 - heure)<=24)
+            if (minuteConsomme > 0)
+                heureConsomme--;
+            TITRE.text = Titre[0]+ "\n Tu as fait un jeu en " + heureConsomme + " heures et " + minuteConsomme + " minutes";
+            if ((heureConsomme)<=24)
             {
                 FIN.text = fins[0];
             }
-            else if ((48 - heure) <= 30)
+            else if ((heureConsomme) <= 30)
             {
                 FIN.text = fins[1];
             }
-            else if ((48 - heure) <= 36)
+            else if ((heureConsomme) <= 36)
             {
                 FIN.text = fins[2];
             }
@@ -63,7 +67,7 @@ public class GameOver : MonoBehaviour {
         else
         {
             TITRE.text = Titre[1];
-            switch (stade)
+            switch (stadeJeu)
             {
                 case (3):
                     FIN.text = fins[4];
