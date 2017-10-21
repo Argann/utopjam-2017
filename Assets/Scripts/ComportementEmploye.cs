@@ -8,7 +8,8 @@ public class ComportementEmploye : MonoBehaviour {
     public enum EtatEmploye {
         Travaille,
         Glande,
-        VaGlander
+        VaGlander,
+        Fighting
     }
 
     /// <summary>
@@ -66,15 +67,15 @@ public class ComportementEmploye : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-        if (etat == EtatEmploye.Travaille && cooldown > 0f) {
-            cooldown -= Time.deltaTime;
-        }
+        if (etat != EtatEmploye.Fighting){
+            if (etat == EtatEmploye.Travaille && cooldown > 0f) {
+                cooldown -= Time.deltaTime;
+            }
 
-        if (etat == EtatEmploye.Travaille && cooldown < 0f) {
-            VaGlander();
+            if (etat == EtatEmploye.Travaille && cooldown < 0f) {
+                VaGlander();
+            }
         }
-
 	}
 
     /// <summary>
@@ -93,4 +94,19 @@ public class ComportementEmploye : MonoBehaviour {
         etat = EtatEmploye.VaGlander;
         GetComponent<DeplacementEmploye>().Chemin = new List<Transform>(chemins[Random.Range(0, chemins.Count)].points);
     }
+
+    /// <summary>
+    /// Permet de savoir si l'employé est en train de travailler.
+    /// </summary>
+    public bool IsWorking() {
+        return etat == EtatEmploye.Travaille;
+    }
+
+    /// <summary>
+    /// Passe l'employé en phase de "combat" : il cesse de se déplacer en attendant la fin du duel.
+    /// </summary>
+    public void Fight() {
+        etat = EtatEmploye.Fighting;
+    }
+
 }
