@@ -283,6 +283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasTartes: {fileID: 0}
   cptTartes: {fileID: 0}
+  animHaut: {fileID: 95437996023514140}
+  joueur: {fileID: 1973836353533636}
 --- !u!114 &114977178839774806
 MonoBehaviour:
   m_ObjectHideFlags: 1

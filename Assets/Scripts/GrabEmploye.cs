@@ -11,6 +11,9 @@ public class GrabEmploye : MonoBehaviour {
     public Slider cptTartes;
     private bool dualActive;
 
+    [SerializeField]
+    private Animator animHaut;
+
     void Start() {
         tientEmploye = false;
         estPresEmploye = null;
@@ -34,9 +37,9 @@ public class GrabEmploye : MonoBehaviour {
     }
 
     void OnTriggerExit2D(Collider2D coll) {
-        if (coll.CompareTag("Employe") && !dualActive) {
-            estPresEmploye = null;
-        }
+        // if (coll.CompareTag("Employe") && !tientEmploye) {
+        //     estPresEmploye = null;
+        // }
         if (coll.CompareTag("Poste")) {
             estPresPoste = null;
         }
@@ -59,6 +62,7 @@ public class GrabEmploye : MonoBehaviour {
     public void PrendEmploye() {
         if (!dualActive) {
             dualActive = true;
+            animHaut.SetBool("grabbing", true);
             Epreuve();
             estPresEmploye.transform.SetParent(this.transform);
             estPresEmploye.SetActive(false);
@@ -71,7 +75,8 @@ public class GrabEmploye : MonoBehaviour {
         estPresEmploye.GetComponent<ComportementEmploye>().VaTravailler();
         estPresEmploye.transform.SetParent(null);
         estPresEmploye.transform.position = estPresPoste.transform.position;
-        
+        animHaut.SetBool("grabbing", false);
+        estPresEmploye = null;
     }
 
     private void Epreuve() {
@@ -87,6 +92,7 @@ public class GrabEmploye : MonoBehaviour {
     }
 
     public void IncrementTartes() {
+        Debug.Log("ah que coucou");
         cptTartes.value += 0.1f;
         if (cptTartes.value >= 1f) {
             canvasTartes.gameObject.SetActive(false);
