@@ -8,6 +8,7 @@ public class DeplacementJoueur : Deplacement {
 
     private float vertical;
 
+    public static bool isFighting = false;
     [SerializeField]
     private Animator animHaut;
 
@@ -30,8 +31,10 @@ public class DeplacementJoueur : Deplacement {
     // C'est mieux de récupérer les Input dans cette boucle, et de faire le mouvement
     // dans le Fixed Update.
     void Update () {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        if (!isFighting) {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+        }
 	}
 
     // On applique le mouvement récupéré dans le Update
@@ -49,5 +52,9 @@ public class DeplacementJoueur : Deplacement {
 
 
         Move(new Vector2(horizontal, vertical), speed);
+    }
+
+    public static void setFightingStance(bool fight) {
+        isFighting = fight;
     }
 }
