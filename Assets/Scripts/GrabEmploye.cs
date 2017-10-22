@@ -34,7 +34,7 @@ public class GrabEmploye : MonoBehaviour {
     }
 
     void OnTriggerExit2D(Collider2D coll) {
-        if (coll.CompareTag("Employe") && !tientEmploye) {
+        if (coll.CompareTag("Employe") && !dualActive) {
             estPresEmploye = null;
         }
         if (coll.CompareTag("Poste")) {

@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4712415942353104}
   - component: {fileID: 212496135548895638}
   - component: {fileID: 95437996023514140}
+  - component: {fileID: 114083239824650878}
   m_Layer: 0
   m_Name: Haut
   m_TagString: Untagged
@@ -56,7 +57,7 @@ GameObject:
   - component: {fileID: 58553425866750854}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Joueur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +71,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4558749215748488}
   - component: {fileID: 114977178839774806}
-  - component: {fileID: 114629575350082882}
   - component: {fileID: 50371363713689716}
   m_Layer: 0
   m_Name: Joueur
@@ -281,6 +281,17 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548456436421990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40644ad42124a74392e68b0e593040e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114256871966470312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992058648803216}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -289,17 +300,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasTartes: {fileID: 0}
   cptTartes: {fileID: 0}
---- !u!114 &114629575350082882
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1973836353533636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40644ad42124a74392e68b0e593040e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114977178839774806
 MonoBehaviour:
   m_ObjectHideFlags: 1
