@@ -10,6 +10,7 @@ public class ProgressBar : MonoBehaviour {
 	public float vitesse;
 
 	// Set to 0, depends on how many employees are actually working.
+
 	private static int nbEmployees;
 
 	private const int MIN = 0;
@@ -20,11 +21,12 @@ public class ProgressBar : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		slider = GameObject.FindGameObjectWithTag("progressBar").GetComponent<Slider>();
-		nbEmployees = 4;
+		nbEmployees = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        Debug.Log(nbEmployees);
 		slider.value = slider.value + vitesse * nbEmployees;
 		if ( slider.value >= MAX ) {
 			vitesse = -vitesse;
@@ -39,11 +41,11 @@ public class ProgressBar : MonoBehaviour {
         return slider.value;
     }
 
-	static void IncrementEmployees() {
+	public static void IncrementEmployees() {
 		nbEmployees++;
 	}
 
-	static void DecrementEmployees() {
+    public static void DecrementEmployees() {
 		nbEmployees--;
 	}
 
