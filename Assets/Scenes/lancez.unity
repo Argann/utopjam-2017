@@ -257,6 +257,20 @@ Prefab:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: f017d885bc56b1e49bcdce9126fa8a3f, type: 2}
+    - target: {fileID: 1825640382014704, guid: c109e80e91e97324ba9c0751abaa1788, type: 2}
+      propertyPath: m_TagString
+      value: lancez
+      objectReference: {fileID: 0}
+    - target: {fileID: 50477771066869220, guid: c109e80e91e97324ba9c0751abaa1788,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 50477771066869220, guid: c109e80e91e97324ba9c0751abaa1788,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c109e80e91e97324ba9c0751abaa1788, type: 2}
   m_IsPrefabParent: 0
