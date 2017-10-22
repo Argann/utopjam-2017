@@ -27,7 +27,7 @@ public class ComportementEmploye : MonoBehaviour {
     /// Temps minimal que l'employé va passer à bosser.
     /// </summary>
     [SerializeField]
-    [Range(0.5f, 5f)]
+    [Range(10f, 30f)]
     private float tempsTravailMinimum;
 
     public float TempsTravailMinimum {
@@ -39,7 +39,7 @@ public class ComportementEmploye : MonoBehaviour {
     /// Temps maximal que l'employé va passer à travailler.
     /// </summary>
     [SerializeField]
-    [Range(0.5f, 5f)]
+    [Range(10f, 30f)]
     private float tempsTravailMaximum;
 
     public float TempsTravailMaximum {
