@@ -84,6 +84,7 @@ public class ComportementEmploye : MonoBehaviour {
     public void VaTravailler() {
         GetComponent<DeplacementEmploye>().Chemin = new List<Transform>();
         etat = EtatEmploye.Travaille;
+        ProgressBar.IncrementEmployees();
         cooldown = Random.Range(tempsTravailMinimum, tempsTravailMaximum);
     }
 
@@ -92,6 +93,7 @@ public class ComportementEmploye : MonoBehaviour {
     /// </summary>
     public void VaGlander() {
         etat = EtatEmploye.VaGlander;
+        ProgressBar.DecrementEmployees();
         GetComponent<DeplacementEmploye>().Chemin = new List<Transform>(chemins[Random.Range(0, chemins.Count)].points);
     }
 
