@@ -21,7 +21,7 @@ public class ProgressBar : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		slider = GameObject.FindGameObjectWithTag("progressBar").GetComponent<Slider>();
-		nbEmployees = 0;
+		nbEmployees = 4;
 	}
 	
 	// Update is called once per frame

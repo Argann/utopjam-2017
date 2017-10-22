@@ -8,6 +8,7 @@ TagManager:
   - Employe
   - Poste
   - Joueur
+  - lancez
   layers:
   - Default
   - TransparentFX
