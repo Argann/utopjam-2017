@@ -179,7 +179,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Jeu d\xE9velopp\xE9 par :\nArgann\nEtienne\nPierre\nWilliam\nL\xE9a"
+  m_Text: "Jeu cr\xE9\xE9 par :\nArgann\nEtienne\nPierre\nWilliam\nL\xE9a\nYouri"
 --- !u!222 &95805459
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1318,8 +1318,8 @@ MonoBehaviour:
     o\xF9 le joueur incarne un chef d'\xE9quipe souhaitant d\xE9velopper son id\xE9e
     de jeu en 48h seulement. Malheureusement, son \xE9quipe souffre de procrastination
     et pr\xE9f\xE8re aller voir ailleurs plut\xF4t que de travailler. Il faudra alors
-    retrouver les \xE9quipiers afin de les remettre au travail.\n\nExplication du
-    jeu\n\nControles"
+    retrouver les \xE9quipiers afin de les remettre au travail.\n\nFl\xE8ches pour
+    se d\xE9placer\nClic souris pour attraper et remettre un \xE9quipier au travail"
 --- !u!222 &1303767059
 CanvasRenderer:
   m_ObjectHideFlags: 0
