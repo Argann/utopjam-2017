@@ -19,9 +19,9 @@ public class Ptimer : MonoBehaviour {
     private int hour;
     private string[] jours = new string[]
     {
-        "vendredi",
-        "samedi",
-        "dimanche"
+        "Fri",
+        "Sat",
+        "Sun"
     };
     private int jourStart;
     public ProgressBar barreprogression;
