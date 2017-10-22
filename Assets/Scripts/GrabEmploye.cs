@@ -11,6 +11,9 @@ public class GrabEmploye : MonoBehaviour {
     public Slider cptTartes;
     private bool dualActive;
 
+    [SerializeField]
+    private Animator animHaut;
+
     void Start() {
         tientEmploye = false;
         estPresEmploye = null;
@@ -57,6 +60,7 @@ public class GrabEmploye : MonoBehaviour {
     public void PrendEmploye() {
         if (!dualActive) {
             dualActive = true;
+            animHaut.SetBool("grabbing", true);
             Epreuve();
             estPresEmploye.transform.SetParent(this.transform);
             estPresEmploye.SetActive(false);
@@ -69,7 +73,7 @@ public class GrabEmploye : MonoBehaviour {
         estPresEmploye.GetComponent<ComportementEmploye>().VaTravailler();
         estPresEmploye.transform.SetParent(null);
         estPresEmploye.transform.position = estPresPoste.transform.position;
-        
+        animHaut.SetBool("grabbing", false);
     }
 
     private void Epreuve() {
