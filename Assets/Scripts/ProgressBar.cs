@@ -26,12 +26,10 @@ public class ProgressBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(nbEmployees);
 		slider.value = slider.value + vitesse * nbEmployees;
 		if ( slider.value >= MAX ) {
 			vitesse = -vitesse;
 			ProgressBar.IncrementEmployees();
-            // MOCK of end condition
             bonnesfins();
         }
 	}
