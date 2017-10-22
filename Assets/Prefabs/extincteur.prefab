@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61390585882704754}
   - component: {fileID: 50477771066869220}
   m_Layer: 0
-  m_Name: objetLances
+  m_Name: extincteur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
