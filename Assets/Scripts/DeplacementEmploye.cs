@@ -46,6 +46,7 @@ public class DeplacementEmploye : Deplacement {
             Transform destination = chemin[0];
             // Si l'employé est déjà arrivé sur le point...
             if (Vector2.Distance(destination.position, transform.position) < distanceMinimale) {
+                GetComponent<Animator>().SetBool("idle", true);
                 // On enlève le point de la liste des points à atteindre.
                 chemin.Remove(destination);
                 // Si c'était le dernier, on stoppe l'employé.
@@ -55,6 +56,7 @@ public class DeplacementEmploye : Deplacement {
                     GetComponent<ComportementEmploye>().Etat = ComportementEmploye.EtatEmploye.Glande;
                 }
             } else {
+                GetComponent<Animator>().SetBool("idle", false);
                 // S'il n'est pas encore arrivé à destination, on l'envoi au point.
                 Vector3 persoPos = Camera.main.WorldToScreenPoint(transform.position);
                 Vector3 destPos = Camera.main.WorldToScreenPoint(destination.position);

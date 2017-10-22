@@ -53,7 +53,9 @@ public class GrabEmploye : MonoBehaviour {
         }
 
         if (estPresPoste && Input.GetAxisRaw("Jump") > 0 && tientEmploye) {
-            PoseEmploye();
+            if (!estPresPoste.GetComponent<PosteDeTravail>().ContientEmploye) {
+                PoseEmploye();
+            }
         }
     }
 

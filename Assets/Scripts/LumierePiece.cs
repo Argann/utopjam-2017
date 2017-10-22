@@ -20,12 +20,14 @@ public class LumierePiece : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll) {
         if (coll.CompareTag("Joueur")) {
+            StopCoroutine("FadeIn");
             StartCoroutine("FadeOut");
         }
     }
 
     void OnTriggerExit2D(Collider2D coll) {
         if (coll.CompareTag("Joueur")) {
+            StopCoroutine("FadeOut");
             StartCoroutine("FadeIn");
         }
     }
