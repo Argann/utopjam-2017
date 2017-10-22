@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fba4ace4b24e14a8b121f8f65cabea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!212 &264149968
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fba4ace4b24e14a8b121f8f65cabea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!212 &274792644
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2072,7 +2072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fba4ace4b24e14a8b121f8f65cabea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!212 &821830567
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2921,7 +2921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fba4ace4b24e14a8b121f8f65cabea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!212 &1053546808
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3214,17 +3214,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1548456436421990, guid: 028c039bb3a1a7d4fb119cc8c82dc2e3,
     type: 2}
   m_PrefabInternal: {fileID: 1251137172}
---- !u!114 &1165272861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1165272857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40644ad42124a74392e68b0e593040e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1199868780
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,12 +3389,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1826435609481714, guid: 028c039bb3a1a7d4fb119cc8c82dc2e3, type: 2}
-      propertyPath: m_TagString
-      value: Joueur
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114629575350082882, guid: 028c039bb3a1a7d4fb119cc8c82dc2e3, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028c039bb3a1a7d4fb119cc8c82dc2e3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1268385515
@@ -3490,7 +3474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fba4ace4b24e14a8b121f8f65cabea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!212 &1274013101
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3724,7 +3708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fba4ace4b24e14a8b121f8f65cabea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!212 &1320618411
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3864,7 +3848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fba4ace4b24e14a8b121f8f65cabea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!212 &1347250010
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6200,7 +6184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fba4ace4b24e14a8b121f8f65cabea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!212 &1898416878
 SpriteRenderer:
   m_ObjectHideFlags: 0
