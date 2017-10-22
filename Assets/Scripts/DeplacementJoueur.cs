@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DeplacementJoueur : Deplacement {
 
-    private float horizontal;
+    private static float horizontal;
 
-    private float vertical;
+    private static float vertical;
 
     public static bool isFighting = false;
     [SerializeField]
@@ -56,5 +56,7 @@ public class DeplacementJoueur : Deplacement {
 
     public static void setFightingStance(bool fight) {
         isFighting = fight;
+        horizontal = 0;
+        vertical = 0;
     }
 }
