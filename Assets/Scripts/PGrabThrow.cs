@@ -12,6 +12,9 @@ public class PGrabThrow : MonoBehaviour {
         private int presarme;
 
     [SerializeField]
+    private Sprite Slancez;
+
+    [SerializeField]
     private float throwingPower;
     [SerializeField]
     private bool _isThrowing;
@@ -74,13 +77,15 @@ public class PGrabThrow : MonoBehaviour {
             armeToutPres = null;
             armeEnMain.GetComponent<Collider2D>().enabled=false;
             armeEnMain.GetComponent<Rigidbody2D>().isKinematic = true;
-            armeEnMain.transform.parent = PlayerMain.transform;
+        armeEnMain.GetComponent<SpriteRenderer>().sprite = Slancez;
+        armeEnMain.transform.parent = PlayerMain.transform;
             //armeEnMain.transform.position = PlayerMain.transform.position;
             //armeEnMain.transform.rotation = PlayerMain.transform.rotation;
             armeEnMain.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
     }
     void Throw(GameObject objetLances)
         {
+        
         armeEnMain.GetComponent<Collider2D>().enabled = true;
         armeEnMain.GetComponent<Rigidbody2D>().isKinematic = false;
         Rigidbody2D throwing = objetLances.GetComponent<Rigidbody2D>();
