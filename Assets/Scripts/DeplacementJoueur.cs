@@ -48,7 +48,7 @@ public class DeplacementJoueur : Deplacement {
         Vector3 persoPos = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 destPos = Camera.main.WorldToScreenPoint(transform.position + direction);
         Vector3 dir = destPos - persoPos;
-        //animBas.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90));
+        animBas.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90));
 
 
         Move(new Vector2(horizontal, vertical), speed);
