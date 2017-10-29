@@ -95,8 +95,6 @@ public class PGrabThrow : MonoBehaviour {
         throwing.AddForce(dir * throwingPower);
 
         Vector2 mouse =Camera.main.ScreenToWorldPoint(transform.position);
-        //throwing.AddRelativeForce(new Vector2((mouse.x/*-transform.position.x*/)* throwingPower, (mouse.y /*-transform.position.y*/) * throwingPower));
-        //Debug.Log(new Vector2((mouse.x - transform.position.x) * throwingPower, (mouse.y - transform.position.y) * throwingPower));
         objetLances.transform.parent = null;
         armeEnMain = null;
         possedearme = false;
