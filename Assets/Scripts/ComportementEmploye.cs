@@ -83,6 +83,7 @@ public class ComportementEmploye : MonoBehaviour {
     /// </summary>
     public void VaTravailler() {
         GetComponent<DeplacementEmploye>().Chemin = new List<Transform>();
+        GetComponent<Rigidbody2D>().velocity = new Vector3();
         etat = EtatEmploye.Travaille;
         ProgressBar.IncrementEmployees();
         cooldown = Random.Range(tempsTravailMinimum, tempsTravailMaximum);

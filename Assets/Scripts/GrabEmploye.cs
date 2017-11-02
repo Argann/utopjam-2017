@@ -37,9 +37,6 @@ public class GrabEmploye : MonoBehaviour {
     }
 
     void OnTriggerExit2D(Collider2D coll) {
-        // if (coll.CompareTag("Employe") && !tientEmploye) {
-        //     estPresEmploye = null;
-        // }
         if (coll.CompareTag("Poste")) {
             estPresPoste = null;
         }
@@ -92,7 +89,6 @@ public class GrabEmploye : MonoBehaviour {
     }
 
     public void IncrementTartes() {
-        Debug.Log("ah que coucou");
         cptTartes.value += 0.1f;
         if (cptTartes.value >= 1f) {
             canvasTartes.gameObject.SetActive(false);
