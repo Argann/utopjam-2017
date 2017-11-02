@@ -16,7 +16,7 @@ public class Pdebut : MonoBehaviour {
 
     public void EnterJam()
     {
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene("TestTilemap");
     }
 
     public void QuitJam()

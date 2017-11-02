@@ -12,6 +12,9 @@ public class PGrabThrow : MonoBehaviour {
         private int presarme;
 
     [SerializeField]
+    private Sprite Slancez;
+
+    [SerializeField]
     private float throwingPower;
     [SerializeField]
     private bool _isThrowing;
@@ -49,13 +52,17 @@ public class PGrabThrow : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        presarme++;
-        armeToutPres = collision.gameObject;
+        if (collision.gameObject.tag=="lancez")
+        {
+            presarme++;
+            armeToutPres = collision.gameObject;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        presarme--;
+        if(presarme>0)
+            presarme--;
         if (armeToutPres==collision.gameObject)
         {
             armeToutPres = null;
@@ -70,16 +77,24 @@ public class PGrabThrow : MonoBehaviour {
             armeToutPres = null;
             armeEnMain.GetComponent<Collider2D>().enabled=false;
             armeEnMain.GetComponent<Rigidbody2D>().isKinematic = true;
-            armeEnMain.transform.parent = Player.transform;
-            armeEnMain.transform.position = PlayerMain.transform.position;
-            armeEnMain.transform.rotation = PlayerMain.transform.rotation;
-        }
+        armeEnMain.GetComponent<SpriteRenderer>().sprite = Slancez;
+        armeEnMain.transform.parent = PlayerMain.transform;
+            //armeEnMain.transform.position = PlayerMain.transform.position;
+            //armeEnMain.transform.rotation = PlayerMain.transform.rotation;
+            armeEnMain.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+    }
     void Throw(GameObject objetLances)
         {
+        
         armeEnMain.GetComponent<Collider2D>().enabled = true;
         armeEnMain.GetComponent<Rigidbody2D>().isKinematic = false;
         Rigidbody2D throwing = objetLances.GetComponent<Rigidbody2D>();
-            throwing.AddRelativeForce(new Vector2(throwingPower, 0));
+
+        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 dir = (Input.mousePosition - sp).normalized;
+        throwing.AddForce(dir * throwingPower);
+
+        Vector2 mouse =Camera.main.ScreenToWorldPoint(transform.position);
         objetLances.transform.parent = null;
         armeEnMain = null;
         possedearme = false;

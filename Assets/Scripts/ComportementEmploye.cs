@@ -8,7 +8,8 @@ public class ComportementEmploye : MonoBehaviour {
     public enum EtatEmploye {
         Travaille,
         Glande,
-        VaGlander
+        VaGlander,
+        Fighting
     }
 
     /// <summary>
@@ -26,7 +27,7 @@ public class ComportementEmploye : MonoBehaviour {
     /// Temps minimal que l'employé va passer à bosser.
     /// </summary>
     [SerializeField]
-    [Range(0.5f, 5f)]
+    [Range(10f, 30f)]
     private float tempsTravailMinimum;
 
     public float TempsTravailMinimum {
@@ -38,7 +39,7 @@ public class ComportementEmploye : MonoBehaviour {
     /// Temps maximal que l'employé va passer à travailler.
     /// </summary>
     [SerializeField]
-    [Range(0.5f, 5f)]
+    [Range(10f, 30f)]
     private float tempsTravailMaximum;
 
     public float TempsTravailMaximum {
@@ -66,15 +67,15 @@ public class ComportementEmploye : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-        if (etat == EtatEmploye.Travaille && cooldown > 0f) {
-            cooldown -= Time.deltaTime;
-        }
+        if (etat != EtatEmploye.Fighting){
+            if (etat == EtatEmploye.Travaille && cooldown > 0f) {
+                cooldown -= Time.deltaTime;
+            }
 
-        if (etat == EtatEmploye.Travaille && cooldown < 0f) {
-            VaGlander();
+            if (etat == EtatEmploye.Travaille && cooldown < 0f) {
+                VaGlander();
+            }
         }
-
 	}
 
     /// <summary>
@@ -82,7 +83,9 @@ public class ComportementEmploye : MonoBehaviour {
     /// </summary>
     public void VaTravailler() {
         GetComponent<DeplacementEmploye>().Chemin = new List<Transform>();
+        GetComponent<Rigidbody2D>().velocity = new Vector3();
         etat = EtatEmploye.Travaille;
+        ProgressBar.IncrementEmployees();
         cooldown = Random.Range(tempsTravailMinimum, tempsTravailMaximum);
     }
 
@@ -91,6 +94,22 @@ public class ComportementEmploye : MonoBehaviour {
     /// </summary>
     public void VaGlander() {
         etat = EtatEmploye.VaGlander;
+        ProgressBar.DecrementEmployees();
         GetComponent<DeplacementEmploye>().Chemin = new List<Transform>(chemins[Random.Range(0, chemins.Count)].points);
     }
+
+    /// <summary>
+    /// Permet de savoir si l'employé est en train de travailler.
+    /// </summary>
+    public bool IsWorking() {
+        return etat == EtatEmploye.Travaille;
+    }
+
+    /// <summary>
+    /// Passe l'employé en phase de "combat" : il cesse de se déplacer en attendant la fin du duel.
+    /// </summary>
+    public void Fight() {
+        etat = EtatEmploye.Fighting;
+    }
+
 }

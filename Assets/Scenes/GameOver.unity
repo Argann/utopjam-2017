@@ -229,7 +229,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 33b690867d504aa4286b9a89bd759f44, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -562,8 +562,8 @@ MonoBehaviour:
   TITRE: {fileID: 1193272962}
   FIN: {fileID: 221277899}
   Jeufini: 0
-  heureRestantes: 0
-  minuteRestantes: 0
+  heureConsomme: 0
+  minuteConsomme: 0
   stadeJeu: 0
 --- !u!1 &1193272960
 GameObject:
@@ -620,7 +620,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 637e4a02a9d08144dbfed266b7e8a926, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -694,7 +694,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 33b690867d504aa4286b9a89bd759f44, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0

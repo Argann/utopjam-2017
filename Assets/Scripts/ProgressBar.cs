@@ -10,6 +10,7 @@ public class ProgressBar : MonoBehaviour {
 	public float vitesse;
 
 	// Set to 0, depends on how many employees are actually working.
+
 	private static int nbEmployees;
 
 	private const int MIN = 0;
@@ -29,7 +30,6 @@ public class ProgressBar : MonoBehaviour {
 		if ( slider.value >= MAX ) {
 			vitesse = -vitesse;
 			ProgressBar.IncrementEmployees();
-            // MOCK of end condition
             bonnesfins();
         }
 	}
@@ -39,11 +39,11 @@ public class ProgressBar : MonoBehaviour {
         return slider.value;
     }
 
-	static void IncrementEmployees() {
+	public static void IncrementEmployees() {
 		nbEmployees++;
 	}
 
-	static void DecrementEmployees() {
+    public static void DecrementEmployees() {
 		nbEmployees--;
 	}
 

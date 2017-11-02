@@ -181,6 +181,18 @@ Prefab:
       propertyPath: chemins.Array.data[1].points.Array.data[2]
       value: 
       objectReference: {fileID: 1018867090}
+    - target: {fileID: 4324548913673520, guid: c6e1f49145906a64d8dda725713cdcac, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324548913673520, guid: c6e1f49145906a64d8dda725713cdcac, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324548913673520, guid: c6e1f49145906a64d8dda725713cdcac, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6e1f49145906a64d8dda725713cdcac, type: 2}
   m_IsPrefabParent: 0
@@ -316,7 +328,7 @@ Transform:
   m_PrefabParentObject: {fileID: 4526971431436056, guid: 13fa868beb5a00b46802623760924c75,
     type: 2}
   m_PrefabInternal: {fileID: 2026829657}
---- !u!1001 &1219858216
+--- !u!1001 &1225031440
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
